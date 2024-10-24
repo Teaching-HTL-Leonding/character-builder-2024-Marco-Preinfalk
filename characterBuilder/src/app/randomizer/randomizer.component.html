@@ -1,0 +1,17 @@
+<button (click) = "bigger()">
+  +
+</button>
+
+<button (click) = "smaller()">
+  -
+</button>
+
+<button (click) = "nextImg()">
+  Next
+</button>
+
+<div *ngIf="imageUrl" style="margin-left: 20px;">
+<h3>Generated Image:</h3>
+<img id="imagePreview" [src]="imageUrlWithScale()" alt="Character Image"/>
+</div>
+

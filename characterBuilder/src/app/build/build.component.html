@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="form">
+
+    <h3>Eye:</h3>
+    <select id="Eye" name="Eye" [(ngModel)]="eye">
+      <option value="NoEye">No Eye</option>
+      <option value="HalfOpen">Half Open</option>
+      <option value="Closed">Closed</option>
+      <option value="Open">Open</option>
+    </select>
+
+    <br />
+
+    <label for="checkHammer">
+      <input type="checkbox" id="checkHammer" name="hasHammer" [(ngModel)]="hasHammer" />
+      Has Hammer
+    </label>
+
+    <h3>Mouth:</h3>
+    <select id="mouth" name="mouth" [(ngModel)]="mouth">
+      <option value="NoMouth">No Mouth</option>
+      <option value="Happy">Happy</option>
+      <option value="Normal">Normal</option>
+      <option value="Unhappy">Unhappy</option>
+    </select>
+
+    <br />
+
+    <h3>Right Hand:</h3>
+    <select id="hand" name="hand" [(ngModel)]="rightHand">
+      <option value="NoHand">No Hand</option>
+      <option value="Normal">Normal</option>
+      <option value="Victory">Victory</option>
+    </select>
+
+    <br />
+
+    <label for="checkTail">
+      <input type="checkbox" id="checkTail" name="hasTail" [(ngModel)]="hasTail" />
+      Has Tail
+    </label>
+
+    <br />
+
+    <button (click)="createImgUrl()">Build image</button>
+
+
+    <button (click)="rndmImg()">Feeling lucky...</button>
+  </div>
+
+     <div *ngIf="imageSrc" style="margin-left: 20px;">
+    <h3>Generated Image:</h3>
+    <img id="imagePreview" [src]="imageSrc()" alt="Character Image"/>
+  </div>
+</div>
